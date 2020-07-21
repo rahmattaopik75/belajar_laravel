@@ -2,9 +2,6 @@
 
 @section('isi')
 	
-			<!-- row -->
-			<div id="hot-post" class="row hot-post">
-				<div class="col-md-8 hot-post-left">
 					<!-- post -->
 					<div class="post post-thumb">
 						<a class="post-img" href="blog-post.html"><img src="{{ asset('public/frontend/img/hot-post-1.jpg')}}" alt=""></a>
@@ -80,7 +77,7 @@
 						@foreach($data as $postingan_terbaru)
 						<div class="col-md-6">
 							<div class="post">
-								<a class="post-img" href="blog-post.html"><img src="{{ $postingan_terbaru->gambar}}" alt=""></a>
+								<a class="post-img" href="{{ route('blog.isi', $postingan_terbaru->slug )}}"><img src="{{ $postingan_terbaru->gambar}}" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 										<a href="category.html">{{ $postingan_terbaru->category->name}}</a>
@@ -97,12 +94,6 @@
 						<!-- /post -->
 					<!-- /row -->
 
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
-
-	<!-- FOOTER -->
+			
 	@endsection
 	
